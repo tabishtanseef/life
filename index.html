@@ -1,0 +1,238 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Happy Faces A</title>
+<link href="https://fonts.googleapis.com/css?family=Hammersmith+One" rel="stylesheet">  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+  <script src="script.js"></script>
+<style>
+#div1 {
+  width: 95%;
+  height: 85%;
+  margin-top:6%;
+  padding: 20px;
+  border: 1px solid #000;
+}
+#div2 {
+  width:  95%;
+  height: 85%;
+  padding: 20px;
+  border: 1px solid #000;
+}
+#div3 {
+  width:  95%;
+  height: 85%;
+  padding: 20px;
+  border: 1px solid #000;
+}
+#div4 {
+  width:  95%;
+  height: 85%;
+  padding: 20px;
+  margin-left:12%;
+  border: 1px solid #000;
+}
+img{
+margin-left:5%;
+padding:10px;
+ -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(3px 3px 5px #222);
+broder-radius:50px;
+}
+#bro{
+border-radius:40px;
+width:70%;
+
+background-color:orange;
+text-align:center;
+
+}
+#yups{
+background-color:#ffffff8f;
+text-align:center;
+padding:10px;
+border-radius:40px;
+border:2px solid #8e5100;
+padding:10px;
+ --box-shadow-color: #583505;
+    box-shadow: 5px 5px 5px var(--box-shadow-color);
+}
+body{
+background-color:#8e5100;
+}
+
+h4{background-color:#ffffff8f;
+text-align:center;
+font-family:Nexa;
+font-size:30px;
+padding:10px;
+}
+h2, h3 {
+background-color:orange;
+color:white;
+text-shadow:2px 2px #000;
+text-align:center;
+font-size:40px;
+padding:10px;
+font-family:'Hammersmith One', sans-serif;
+}
+.button {
+    position: relative;
+    background-color: #f4511e;
+    border: none;
+	margin-top: 10px;
+	margin-left: 25px;
+    font-size: 25px;
+	font-family:CAC Moose, cursive;
+    color: #FFFFFF;
+    padding: 1px;
+    width: 80%;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.hidden{
+
+display:none;
+}
+</style>
+<script>
+$('#drag1').draggable();
+$('#drag2').draggable();
+$('#drag3').draggable();
+$('#drag4').draggable();
+var count=0;
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+function drop1(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  console.log(data);
+  if(data=='drag1'){
+  count++;
+  }
+  ev.target.appendChild(document.getElementById(data));
+}
+function drop2(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  if(data=='drag2'){
+  count++;
+  }
+  ev.target.appendChild(document.getElementById(data));
+}
+function drop3(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  console.log(data);
+  if(data=='drag3'){
+  count++;
+  }
+  ev.target.appendChild(document.getElementById(data));
+}
+function drop4(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  if(data=='drag4'){
+  count++;
+  }
+  ev.target.appendChild(document.getElementById(data));
+}
+function go(){
+if(count>=4){
+ var audio = document.getElementById("audio1");
+       audio.play();
+setInterval(function(){ 
+
+$('.tab1').addClass('hidden')
+$('h3').addClass('hidden')
+	   $('.tab').removeClass('hidden')},1000);
+}
+else{
+ var audio = document.getElementById("audio2");
+       audio.play();
+}
+}
+</script>
+</head>
+<body>
+<h3>Place the images in the correct sequence. </h3>
+
+<div class="container tab1">
+
+<div class="row" id="yups">
+	<div class="col-sm-9">
+		<div class="row">
+			<div class="col-sm-4"><img src="items/r2.png" width="90%" height="auto"></div>
+			<div class="col-sm-4"><div id="div1" ondrop="drop1(event)" ondragover="allowDrop(event)"><span style="font-size:20px; font-weight:bold;" >1.</span></div></div>
+			<div class="col-sm-4"><img src="items/r1.png" width="90%" height="auto"></div>
+		</div>
+		<div class="row" id="ii">	
+			<div class="col-sm-4"><br><div id="div4" ondrop="drop4(event)" ondragover="allowDrop(event)"><span style="font-size:20px; font-weight:bold;" >4.</span></div></div>
+			<div class="col-sm-4"><img src="items/0.png" width="90%" height="auto"></div>
+			<div class="col-sm-4"><br><div id="div2" ondrop="drop2(event)" ondragover="allowDrop(event)"><span style="font-size:20px; font-weight:bold;" >2.</span></div></div>
+		</div>
+		<div class="row">	
+			<div class="col-sm-4"><img src="items/r3.png" width="90%" height="auto"></div>
+			<div class="col-sm-4"><br><div id="div3" ondrop="drop3(event)" ondragover="allowDrop(event)"><span style="font-size:20px; font-weight:bold;" >3.</span></div></div>
+			<div class="col-sm-4"><img src="items/r4.png" width="90%" height="auto"></div>
+		</div>
+		<div class="row" style="margin-top:-10px;" >
+			<div class="col-sm-12"><br></div>
+			<div class="col-sm-4">
+			<button class="button"   onclick="window.location.reload()"><span>Reset </span></button>
+			</div>
+			<div class="col-sm-4">
+			
+			</div>
+			<div class="col-sm-4">
+			<button class="button" onClick="go()"><span>Submit </span></button>
+			</div>
+
+			
+		</div>
+	</div>
+	<div class="col-sm-3" id="bro">
+		<div class="row">
+			<div class="col-sm-12"></div>
+			<div class="col-sm-12">
+			<img id="drag2" src="items/2.png" draggable="true" ondragstart="drag(event)" style="border-radius:20px;"width="70%" height="auto">
+			</div>
+			<div class="col-sm-12">
+			<img id="drag3" src="items/3.png" draggable="true" ondragstart="drag(event)" style="border-radius:20px;"width="70%" height="auto">
+			</div>
+			<div class="col-sm-12">
+			<img id="drag1" src="items/1.png" draggable="true" ondragstart="drag(event)" style="border-radius:20px;"width="70%" height="auto">
+			</div>
+			<div class="col-sm-12">
+			<img id="drag4" src="items/4.png" draggable="true" ondragstart="drag(event)" style="border-radius:20px;"width="70%" height="auto">
+			</div>
+			<div class="col-sm-12"></div>
+		</div>
+	</div>
+</div>
+	<br>
+	<br>
+</div>
+
+<div class="tab hidden">
+	<img src="items/Welldone.gif" width="90%" height="auto">
+</div>
+</div>
+<audio src="audio/try-again.mp3" id="audio2"></audio>
+<audio src="audio/well-done.mp3" id="audio1"></audio>
+
+</body>
+</html>

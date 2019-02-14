@@ -15,7 +15,7 @@
   width: 95%;
   height: 85%;
   margin-top:6%;
-  padding: 20px;
+  padding: 30px;
   border: 1px solid #000;
 }
 #div2 {
@@ -37,7 +37,7 @@
   margin-left:12%;
   border: 1px solid #000;
 }
-img{
+img, #drag2{
 margin-left:5%;
 padding:10px;
  -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -98,6 +98,12 @@ font-family:'Hammersmith One', sans-serif;
     text-decoration: none;
     overflow: hidden;
     cursor: pointer;
+}
+#drag2{
+background-image:url('items/1.png');
+height:200px;
+background-position:center;
+background-repeat:no-repeat;
 }
 .hidden{
 
@@ -209,7 +215,7 @@ else{
 		<div class="row">
 			<div class="col-sm-12"><br></div>
 			<div class="col-sm-2"></div>
-			<div class="col-sm-8" id="drag2" draggable="true" ondragstart="drag(event)" style="height:150px; width:100px; background:url(items/2.png); background-attachment:; background-position:; background-repeat:no-repeat;  max-width: 100%; max-height: 100%;">
+			<div class="col-sm-8" id="drag2" draggable="true" ondragstart="drag(event)" style=" background:url(items/1.png);  background-position:center; background-repeat:no-repeat;">
 			</div>
 			<div class="col-sm-12">
 			<img id="drag3" src="items/3.png" draggable="true" ondragstart="drag(event)" style="border-radius:20px;"width="70%" height="auto">
@@ -223,8 +229,10 @@ else{
 			<div class="col-sm-12"></div>
 		</div>
 	</div>
+	
 </div>
 	<br>
+	
 	<br>
 </div>
 

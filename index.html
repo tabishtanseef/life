@@ -121,15 +121,16 @@ function drop1(ev) {
   var data = ev.dataTransfer.getData("text");
   console.log(data);
   if(data=='drag1'){
-  count++;
+  count++;console.log(count);
   }
   ev.target.appendChild(document.getElementById(data));
 }
 function drop2(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
+  console.log(data);
   if(data=='drag2'){
-  count++;
+  count++;console.log(count);
   }
   ev.target.appendChild(document.getElementById(data));
 }
@@ -138,15 +139,16 @@ function drop3(ev) {
   var data = ev.dataTransfer.getData("text");
   console.log(data);
   if(data=='drag3'){
-  count++;
+  count++;console.log(count);
   }
   ev.target.appendChild(document.getElementById(data));
 }
 function drop4(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
+  console.log(data);
   if(data=='drag4'){
-  count++;
+  count++;console.log(count);
   }
   ev.target.appendChild(document.getElementById(data));
 }
